@@ -14,7 +14,8 @@ body.auth-page {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   background: var(--color-green);
 }
-.auth-nav .nav-back {
+.auth-nav .nav-back,
+.nav-back {
   font-family: var(--font-body);
   font-size: 9px;
   letter-spacing: 2px;
@@ -23,7 +24,8 @@ body.auth-page {
   text-decoration: none;
   transition: color var(--transition-base);
 }
-.auth-nav .nav-back:hover { color: var(--color-text-light); }
+.auth-nav .nav-back:hover,
+.nav-back:hover { color: rgba(255, 255, 255, 0.75); }
 
 /* Two-column layout */
 .auth-layout {
@@ -196,6 +198,28 @@ body.auth-page {
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+.btn-google {
+  width: 100%;
+  background: var(--color-white);
+  border: 1px solid #E0DBD4;
+  padding: 13px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+.btn-google:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
 }
 
 .form-footer {

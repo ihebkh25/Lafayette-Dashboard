@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anmelden — Lafayette Real Estate</title>
+  <meta name="description" content="Mitgliederbereich — Lafayette Real Estate. Exklusiver Zugang zu Off-Market-Objekten und diskreten Immobilienangeboten.">
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/buttons.css">
+  <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
+</head>
+<body>
+
+  <!-- ======= NAVBAR (auth simplified) ======= -->
+  <nav id="main-nav" aria-label="Hauptnavigation" class="scrolled">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo__name">Lafayette</span>
+      <span class="nav-logo__sub">Real Estate</span>
+    </a>
+    <a href="index.html" class="nav-back">← Zurück zur Website</a>
+  </nav>
+
+  <!-- ======= MAIN AUTH LAYOUT ======= -->
+  <div class="auth-layout">
+
+    <!-- LEFT: Brand panel -->
+    <div class="auth-left" style="background-image: linear-gradient(160deg, rgba(8,35,18,0.88) 0%, rgba(8,35,18,0.4) 70%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=85');">
+      <div class="auth-left-eyebrow">Mitgliederbereich</div>
+      <div class="auth-left-headline">Exklusiver<br>Zugang.</div>
+      <div class="auth-left-divider"></div>
+      <div class="auth-left-body">Als Mitglied des Lafayette-Netzwerks erhalten Sie Zugang zu nicht-öffentlichen Objekten, diskreten Angeboten und direktem Kontakt zu unserem Team.</div>
+      <div class="auth-perks">
+        <div class="auth-perk">
+          <div class="perk-dot"></div>
+          <div class="perk-text">Zugang zu exklusiven Off-Market-Objekten</div>
+        </div>
+        <div class="auth-perk">
+          <div class="perk-dot"></div>
+          <div class="perk-text">Direkte Kommunikation mit Ludwig Zoller</div>
+        </div>
+        <div class="auth-perk">
+          <div class="perk-dot"></div>
+          <div class="perk-text">Frühzeitige Benachrichtigung bei neuen Referenzen</div>
+        </div>
+        <div class="auth-perk">
+          <div class="perk-dot"></div>
+          <div class="perk-text">Vollständig vertraulich — keine öffentliche Sichtbarkeit</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Forms panel -->
+    <div class="auth-right">
+
+      <!-- TABS -->
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-tab="login">Anmelden</div>
+        <div class="auth-tab" data-tab="register">Registrieren</div>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form class="auth-form" id="form-login" action="#" method="post">
+
+        <div class="form-group">
+          <label class="form-label" for="login-email">E-Mail-Adresse</label>
+          <input class="form-input" type="email" id="login-email" name="email" placeholder="ihre@email.de" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Passwort</label>
+          <input class="form-input" type="password" id="login-password" name="password" placeholder="••••••••••" required>
+          <a href="#" class="form-forgot">Passwort vergessen?</a>
+        </div>
+
+        <button class="btn-solid form-submit" type="submit">Anmelden</button>
+
+        <div class="form-divider"><span>oder</span></div>
+
+        <button type="button" class="btn-google">
+          <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          Mit Google anmelden
+        </button>
+
+        <div class="discretion-note">
+          Ihr Konto ist vollständig vertraulich. Ihre Daten werden nicht veröffentlicht und ausschließlich zur Kommunikation mit Lafayette Real Estate verwendet.
+        </div>
+
+      </form>
+
+      <!-- REGISTRATION FORM -->
+      <form class="auth-form hidden" id="form-register" action="#" method="post">
+
+        <div class="form-group-row">
+          <div class="form-group">
+            <label class="form-label" for="reg-vorname">Vorname</label>
+            <input class="form-input" type="text" id="reg-vorname" name="vorname" placeholder="Max" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-nachname">Nachname</label>
+            <input class="form-input" type="text" id="reg-nachname" name="nachname" placeholder="Mustermann" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-email">E-Mail-Adresse</label>
+          <input class="form-input" type="email" id="reg-email" name="email" placeholder="ihre@email.de" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Passwort</label>
+          <input class="form-input" type="password" id="reg-password" name="password" placeholder="Mindestens 8 Zeichen" minlength="8" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-interesse">Ich bin interessiert als</label>
+          <select class="form-select" id="reg-interesse" name="interesse" required>
+            <option value="" disabled selected>Bitte wählen…</option>
+            <option value="kaeufer">Käufer</option>
+            <option value="verkaeufer">Verkäufer</option>
+            <option value="investor">Investor / Family Office</option>
+            <option value="fonds">Fonds / institutioneller Investor</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        <button class="btn-solid form-submit" type="submit">Konto erstellen</button>
+
+        <div class="discretion-note">
+          Ihre Registrierung wird manuell durch unser Team geprüft. Nach Freischaltung erhalten Sie Zugang zu exklusiven Inhalten.
+        </div>
+
+        <p class="form-footer">Mit der Registrierung stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-name">Lafayette</div>
+        <div class="logo-sub">Real Estate</div>
+        <p>Lafayette Real Estate GmbH &amp; Co KG<br>Margarethenstraße 8<br>82049 Pullach bei München</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="objekte.html">Objekte</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+4915140767073">+49 151 40767073</a>
+        <a href="mailto:office@lafayette-real-estate.de">office@lafayette-real-estate.de</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lafayette Real Estate GmbH &amp; Co KG · Alle Rechte vorbehalten.</p>
+      <p>Amtsgericht München · HRB 106970</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
