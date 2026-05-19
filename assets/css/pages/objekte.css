@@ -46,6 +46,7 @@
   letter-spacing: 1px;
   color: #555;
   cursor: pointer;
+  background: none;
   transition: all var(--transition-base);
 }
 .filter-chip.active {
@@ -64,4 +65,9 @@
 /* Filter wrapper — targeted by filter.js; wraps each .prop-card with data-categories attribute */
 .prop-card-wrap {
   /* wrapper for filter targeting — inherits display from grid context */
+}
+
+/* Property card image height in the object grid */
+.obj-grid .prop-card__img {
+  height: 200px;
 }

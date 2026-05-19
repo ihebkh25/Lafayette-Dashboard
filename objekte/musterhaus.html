@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>München-Harlaching — Lafayette Real Estate</title>
+  <meta name="description" content="Exklusive Prestige-Villa in München-Harlaching. 6 Wohneinheiten, über 600 m² vermietbare Fläche. Diskrete Vermarktung auf Anfrage — Lafayette Real Estate.">
   <link rel="icon" href="data:,">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,6 @@
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/components/navbar.css">
   <link rel="stylesheet" href="../assets/css/components/footer.css">
-  <link rel="stylesheet" href="../assets/css/components/property-card.css">
   <link rel="stylesheet" href="../assets/css/components/buttons.css">
   <link rel="stylesheet" href="../assets/css/components/forms.css">
   <link rel="stylesheet" href="../assets/css/pages/objekt-detail.css">
@@ -91,11 +91,11 @@
       <form class="enquiry-form" action="#" method="post">
         <div class="form-group">
           <label class="form-label" for="name">Ihr Name</label>
-          <input class="form-input" type="text" id="name" name="name" placeholder="Max Mustermann">
+          <input class="form-input" type="text" id="name" name="name" placeholder="Max Mustermann" required>
         </div>
         <div class="form-group">
           <label class="form-label" for="email">E-Mail</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="ihre@email.de">
+          <input class="form-input" type="email" id="email" name="email" placeholder="ihre@email.de" required>
         </div>
         <div class="form-group">
           <label class="form-label" for="phone">Telefon (optional)</label>
@@ -103,7 +103,7 @@
         </div>
         <div class="form-group">
           <label class="form-label" for="message">Ihre Nachricht</label>
-          <textarea class="form-textarea" id="message" name="message" placeholder="Ihre Nachricht zu diesem Objekt…"></textarea>
+          <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Ihre Nachricht zu diesem Objekt…" required></textarea>
         </div>
         <button type="submit" class="btn-solid enquiry-submit">Anfrage senden</button>
       </form>

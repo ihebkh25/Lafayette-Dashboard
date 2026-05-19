@@ -1,7 +1,7 @@
 /* ============ PAGE HERO (inner pages) ============ */
 .page-hero {
   background: var(--color-green);
-  padding: 60px var(--space-lg) var(--space-lg);
+  padding: calc(68px + 40px) var(--space-lg) 52px;  /* 68px nav + 40px visual breathing room */
 }
 .page-hero__breadcrumb {
   font-family: var(--font-body);
