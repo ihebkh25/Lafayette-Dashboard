@@ -1,0 +1,42 @@
+/* ============ BUTTONS ============ */
+.btn-ghost {
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background var(--transition-base);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--color-green);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-green);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.btn-outline:hover { background: var(--color-green); color: white; }
+
+.btn-solid {
+  display: inline-block;
+  background: var(--color-green);
+  border: 1px solid var(--color-green);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition: background var(--transition-base);
+}
+.btn-solid:hover { background: var(--color-green-dark); }

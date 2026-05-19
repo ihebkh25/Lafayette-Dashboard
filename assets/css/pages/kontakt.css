@@ -1,0 +1,143 @@
+/* ============ KONTAKT PAGE ============ */
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 420px;
+}
+
+/* Left info panel */
+.kontakt-info {
+  background: var(--color-green);
+  padding: 60px var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.kontakt-info .k-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 12px;
+}
+.kontakt-info .k-title {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 36px;
+  color: var(--color-white);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.cd-type {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 4px;
+}
+.cd-val {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+.person-mini {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.person-mini-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.person-mini-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.person-mini-name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 17px;
+  color: var(--color-white);
+}
+.person-mini-role {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 3px;
+}
+
+/* Right form panel */
+.kontakt-form {
+  background: var(--color-cream);
+  padding: 60px var(--space-lg);
+}
+.k-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.k-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.k-form input,
+.k-form select,
+.k-form textarea {
+  border: 1px solid #E0DBD4;
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #333;
+  background: var(--color-white);
+  width: 100%;
+  outline: none;
+}
+.k-form textarea { height: 110px; resize: none; }
+.k-form select { appearance: none; }
+.k-form-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 3px;
+}
+.k-submit {
+  background: var(--color-green);
+  color: var(--color-white);
+  border: none;
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.k-privacy {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: #AAA;
+  line-height: 1.6;
+  margin-top: 4px;
+}

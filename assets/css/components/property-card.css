@@ -1,0 +1,80 @@
+/* ============ PROPERTY CARD ============ */
+.prop-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition-base);
+}
+.prop-card:hover { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); }
+
+.prop-card__img {
+  position: relative;
+  overflow: hidden;
+}
+.prop-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.prop-card:hover .prop-card__img img { transform: scale(1.04); }
+
+.prop-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(13, 61, 34, 0.88);
+  backdrop-filter: blur(4px);
+  padding: 3px 10px;
+  font-family: var(--font-body);
+  font-size: 7.5px;
+  letter-spacing: 2px;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.prop-card__body {
+  padding: 18px 20px 20px;
+}
+
+.prop-card__location {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--color-charcoal);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.prop-card__type {
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: #888;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.prop-card__divider {
+  width: 20px;
+  height: 1px;
+  background: #D5CFC5;
+  margin-bottom: 12px;
+}
+
+.prop-card__cta {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--color-green);
+  text-transform: uppercase;
+}
+
+/* Featured (home page) card size variants */
+.prop-card-main { grid-row: 1 / 3; }
+.prop-card-main .prop-card__img { height: 420px; }
+.prop-card-main .prop-card__body { padding: 22px 26px 26px; }
+.prop-card-main .prop-card__location { font-size: 27px; }
+.prop-card-side .prop-card__img { height: 190px; }

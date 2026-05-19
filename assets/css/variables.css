@@ -1,0 +1,24 @@
+:root {
+  --color-green:       #0D3D22;
+  --color-green-dark:  #0A2E18;
+  --color-cream:       #FAF8F4;
+  --color-white:       #FFFFFF;
+  --color-charcoal:    #1A1A1A;
+  --color-gold:        #C9A96E;
+  --color-border:      #E5E0D8;
+  --color-text-muted:  #666666;
+  --color-text-light:  rgba(255,255,255,0.75);
+  --color-text-faint:  rgba(255,255,255,0.4);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', -apple-system, sans-serif;
+
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  32px;
+  --space-lg:  52px;
+  --space-xl:  80px;
+
+  --transition-base: 0.25s ease;
+  --transition-nav:  0.35s ease;
+}
