@@ -100,28 +100,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-.k-form input,
-.k-form select,
-.k-form textarea {
-  border: 1px solid #E0DBD4;
-  padding: 13px 16px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: #333;
-  background: var(--color-white);
-  width: 100%;
-  outline: none;
-}
-.k-form textarea { height: 110px; resize: none; }
-.k-form select { appearance: none; }
-.k-form-label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #888;
-  margin-bottom: 3px;
-}
+/* Field appearance handled by .form-input / .form-select / .form-textarea / .form-label from forms.css */
 .k-submit {
   background: var(--color-green);
   color: var(--color-white);

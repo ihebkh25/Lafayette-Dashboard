@@ -98,15 +98,7 @@
   color: #444;
 }
 
-.sidebar-label {
-  font-family: var(--font-body);
-  font-size: 9px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--color-green);
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
+/* Use .section-label from base.css — .sidebar-label removed (duplicate) */
 .contact-card {
   display: flex;
   align-items: center;
@@ -146,18 +138,7 @@
   flex-direction: column;
   gap: 10px;
 }
-.enquiry-form input,
-.enquiry-form textarea {
-  border: 1px solid #E0DBD4;
-  padding: 11px 14px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: #333;
-  background: var(--color-cream);
-  width: 100%;
-  outline: none;
-}
-.enquiry-form textarea { height: 80px; resize: none; }
+/* Field appearance handled by .form-input / .form-textarea from forms.css */
 .enquiry-submit {
   background: var(--color-green);
   color: var(--color-white);
