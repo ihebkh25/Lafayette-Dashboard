@@ -25,3 +25,21 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 300; line-height: 1.
   color: var(--color-text-faint);
   opacity: 1;
 }
+
+.section {
+  padding: var(--space-xl) var(--space-lg);
+}
+.section.cream { background: var(--color-cream); }
+.section.white { background: var(--color-white); }
+.section.green { background: var(--color-green); }
+
+.sec-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 34px;
+  color: var(--color-charcoal);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+.sec-title.light { color: white; }

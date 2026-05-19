@@ -1,13 +1,5 @@
 /* ============ LEISTUNGEN PAGE ============ */
 
-/* Shared section layout (mirrored from objekte.css) */
-.section {
-  padding: 72px var(--space-lg);
-}
-.section.cream { background: var(--color-cream); }
-.section.white { background: var(--color-white); }
-.section.green { background: var(--color-green); }
-
 .leist-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

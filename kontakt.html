@@ -38,11 +38,11 @@
   </nav>
 
   <!-- ======= PAGE HERO ======= -->
-  <div class="page-hero">
+  <header class="page-hero">
     <div class="page-hero__breadcrumb">Lafayette Real Estate → Kontakt</div>
     <h1 class="page-hero__title">Sprechen wir.</h1>
     <div class="page-hero__subtitle">Vertraulich · Unverbindlich</div>
-  </div>
+  </header>
 
   <!-- ======= KONTAKT SPLIT LAYOUT ======= -->
   <main>
@@ -56,11 +56,11 @@
           <div class="contact-detail">
             <div class="cd-item">
               <div class="cd-type">Telefon</div>
-              <div class="cd-val">+49 151 40767073</div>
+              <a class="cd-val" href="tel:+4915140767073">+49 151 40767073</a>
             </div>
             <div class="cd-item">
               <div class="cd-type">E-Mail</div>
-              <div class="cd-val">office@lafayette-real-estate.de</div>
+              <a class="cd-val" href="mailto:office@lafayette-real-estate.de">office@lafayette-real-estate.de</a>
             </div>
             <div class="cd-item">
               <div class="cd-type">Adresse</div>
@@ -82,7 +82,7 @@
       <!-- RIGHT: Contact form -->
       <div class="kontakt-form">
         <div class="section-label">Anfrage senden</div>
-        <form class="k-form" action="#" method="post" novalidate>
+        <form class="k-form" action="#" method="post">
 
           <div class="k-form-row">
             <div class="form-group">
@@ -102,7 +102,8 @@
 
           <div class="form-group">
             <label class="form-label" for="interesse">Ich bin interessiert als</label>
-            <select class="form-select" id="interesse" name="interesse">
+            <select class="form-select" id="interesse" name="interesse" required>
+              <option value="" disabled selected>Bitte wählen…</option>
               <option value="kaeufer">Käufer</option>
               <option value="verkaeufer">Verkäufer</option>
               <option value="investor">Investor / Family Office</option>

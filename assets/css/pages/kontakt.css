@@ -50,6 +50,14 @@
   color: rgba(255, 255, 255, 0.7);
   font-weight: 300;
 }
+.cd-val a, a.cd-val {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+.cd-val a:hover, a.cd-val:hover {
+  color: white;
+}
 .person-mini {
   display: flex;
   align-items: center;
