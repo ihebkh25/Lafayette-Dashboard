@@ -138,6 +138,42 @@
 }
 
 /* ============ PHILOSOPHY STRIP ============ */
+.philosophy__person-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+.philosophy__portrait {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+.philosophy__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.philosophy__name {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: white;
+}
+.philosophy__role {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  margin-top: 5px;
+}
 .philosophy {
   background: var(--color-green);
   padding: var(--space-xl) var(--space-lg);

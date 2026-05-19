@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lafayette Real Estate — Exklusive Immobilien München</title>
+  <link rel="icon" href="data:,">
   <meta name="description" content="Lafayette Real Estate ist eine Plattform für außergewöhnliche exklusive Immobilien im privaten und gewerblichen Bereich.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,7 @@
 <body>
 
   <!-- ======= NAVBAR ======= -->
-  <nav id="main-nav">
+  <nav id="main-nav" aria-label="Hauptnavigation">
     <a href="index.html" class="nav-logo">
       <div class="nav-logo__name">Lafayette</div>
       <div class="nav-logo__sub">Real Estate</div>
@@ -40,13 +41,13 @@
   <main>
 
     <!-- ======= HERO ======= -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-headline">
       <div class="hero-body">
         <div class="hero-eyebrow">Exklusiv · Diskret · München</div>
-        <h1 class="hero-headline">Außer&shy;gewöhn&shy;liche<br>Immo&shy;bilien.</h1>
+        <h1 id="hero-headline" class="hero-headline">Außer&shy;gewöhn&shy;liche<br>Immo&shy;bilien.</h1>
         <div class="hero-divider"></div>
         <div class="hero-tagline">Für ein privates Netzwerk.</div>
-        <a href="kontakt.html" class="hero-cta">Kontakt aufnehmen</a>
+        <a href="kontakt.html" class="btn-ghost">Kontakt aufnehmen</a>
       </div>
       <div class="hero-scroll">
         <div class="scroll-line"></div>
@@ -97,7 +98,7 @@
               <div class="prop-card__location">München-Harlaching</div>
               <div class="prop-card__type">Prestige Villa · Auf Anfrage</div>
               <div class="prop-card__divider"></div>
-              <a href="objekte/musterhaus.html" class="prop-card__cta">Anfrage stellen →</a>
+              <a href="objekte.html" class="prop-card__cta">Anfrage stellen →</a>
             </div>
           </div>
         </div>
@@ -139,14 +140,14 @@
 
     <!-- ======= PHILOSOPHY ======= -->
     <section class="philosophy">
-      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;">
-        <div class="phil-label" style="text-align:center">Unsere Philosophie</div>
-        <div style="width:210px;height:210px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,0.15);flex-shrink:0;">
-          <img src="assets/images/ludwig_company.jpg" alt="Ludwig Zoller — CEO &amp; Co-Founder Lafayette Real Estate" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+      <div class="philosophy__person-col">
+        <div class="phil-label">Unsere Philosophie</div>
+        <div class="philosophy__portrait">
+          <img src="assets/images/ludwig_company.jpg" alt="Ludwig Zoller — CEO &amp; Co-Founder Lafayette Real Estate">
         </div>
         <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:20px;letter-spacing:1px;color:white;">Ludwig Zoller</div>
-          <div style="font-family:'Inter',sans-serif;font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-top:5px;">CEO &amp; Co-Founder</div>
+          <div class="philosophy__name">Ludwig Zoller</div>
+          <div class="philosophy__role">CEO &amp; Co-Founder</div>
         </div>
       </div>
       <div>
