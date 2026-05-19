@@ -73,7 +73,8 @@
 }
 
 /* Featured (home page) card size variants */
-.prop-card-main { grid-row: 1 / 3; }
+.featured__main { grid-row: 1 / 3; }
+.prop-card-main { height: 100%; }
 .prop-card-main .prop-card__img { height: 420px; }
 .prop-card-main .prop-card__body { padding: 22px 26px 26px; }
 .prop-card-main .prop-card__location { font-size: 27px; }
