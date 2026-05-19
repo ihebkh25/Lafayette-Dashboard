@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt — Lafayette Real Estate</title>
+  <meta name="description" content="Nehmen Sie Kontakt auf — Lafayette Real Estate. Vertraulich und unverbindlich. +49 151 40767073 · office@lafayette-real-estate.de">
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/components/footer.css">
+  <link rel="stylesheet" href="assets/css/components/buttons.css">
+  <link rel="stylesheet" href="assets/css/components/forms.css">
+  <link rel="stylesheet" href="assets/css/components/page-hero.css">
+  <link rel="stylesheet" href="assets/css/pages/kontakt.css">
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav id="main-nav" aria-label="Hauptnavigation">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo__name">Lafayette</div>
+      <div class="nav-logo__sub">Real Estate</div>
+    </a>
+    <div class="nav-links">
+      <a href="objekte.html">Objekte</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+      <a href="anmelden.html" class="nav-links__cta">Anmelden</a>
+    </div>
+  </nav>
+
+  <!-- ======= PAGE HERO ======= -->
+  <div class="page-hero">
+    <div class="page-hero__breadcrumb">Lafayette Real Estate → Kontakt</div>
+    <h1 class="page-hero__title">Sprechen wir.</h1>
+    <div class="page-hero__subtitle">Vertraulich · Unverbindlich</div>
+  </div>
+
+  <!-- ======= KONTAKT SPLIT LAYOUT ======= -->
+  <main>
+    <div class="kontakt-grid">
+
+      <!-- LEFT: Contact info -->
+      <div class="kontakt-info">
+        <div>
+          <div class="k-label">Direktkontakt</div>
+          <div class="k-title">Wir freuen uns auf Ihre Nachricht.</div>
+          <div class="contact-detail">
+            <div class="cd-item">
+              <div class="cd-type">Telefon</div>
+              <div class="cd-val">+49 151 40767073</div>
+            </div>
+            <div class="cd-item">
+              <div class="cd-type">E-Mail</div>
+              <div class="cd-val">office@lafayette-real-estate.de</div>
+            </div>
+            <div class="cd-item">
+              <div class="cd-type">Adresse</div>
+              <div class="cd-val">Margarethenstraße 8<br>82049 Pullach bei München</div>
+            </div>
+          </div>
+        </div>
+        <div class="person-mini">
+          <div class="person-mini-img">
+            <img src="assets/images/ludwig_company.jpg" alt="Ludwig Zoller">
+          </div>
+          <div>
+            <div class="person-mini-name">Ludwig Zoller</div>
+            <div class="person-mini-role">CEO &amp; Co-Founder</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact form -->
+      <div class="kontakt-form">
+        <div class="section-label">Anfrage senden</div>
+        <form class="k-form" action="#" method="post" novalidate>
+
+          <div class="k-form-row">
+            <div class="form-group">
+              <label class="form-label" for="vorname">Vorname</label>
+              <input class="form-input" type="text" id="vorname" name="vorname" placeholder="Max" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="nachname">Nachname</label>
+              <input class="form-input" type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-Mail</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="interesse">Ich bin interessiert als</label>
+            <select class="form-select" id="interesse" name="interesse">
+              <option value="kaeufer">Käufer</option>
+              <option value="verkaeufer">Verkäufer</option>
+              <option value="investor">Investor / Family Office</option>
+              <option value="fonds">Fonds / institutioneller Investor</option>
+              <option value="sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="nachricht">Ihre Nachricht</label>
+            <textarea class="form-textarea" id="nachricht" name="nachricht" rows="5" placeholder="Beschreiben Sie kurz Ihr Anliegen…" required></textarea>
+          </div>
+
+          <button class="k-submit" type="submit">Anfrage absenden</button>
+
+          <p class="k-privacy">Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
+
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-name">Lafayette</div>
+        <div class="logo-sub">Real Estate</div>
+        <p>Lafayette Real Estate GmbH &amp; Co KG<br>Margarethenstraße 8<br>82049 Pullach bei München</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="objekte.html">Objekte</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+4915140767073">+49 151 40767073</a>
+        <a href="mailto:office@lafayette-real-estate.de">office@lafayette-real-estate.de</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lafayette Real Estate GmbH &amp; Co KG · Alle Rechte vorbehalten.</p>
+      <p>Amtsgericht München · HRB 106970</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>
