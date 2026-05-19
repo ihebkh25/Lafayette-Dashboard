@@ -1,4 +1,25 @@
 /* ============ ÜBER UNS PAGE ============ */
+
+/* Shared section layout (mirrored from objekte.css) */
+.section {
+  padding: 72px var(--space-lg);
+}
+.section.cream { background: var(--color-cream); }
+.section.white { background: var(--color-white); }
+.section.green { background: var(--color-green); }
+
+/* sec-title used in network strip heading */
+.sec-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 34px;
+  color: var(--color-charcoal);
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+.sec-title.light { color: var(--color-white); }
+
 .about-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,4 +112,19 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #888;
+}
+
+/* Network strip inside green section */
+.section.green .network-strip {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.section.green .network-item {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.section.green .network-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.section.green .network-label {
+  color: rgba(255, 255, 255, 0.3);
 }
