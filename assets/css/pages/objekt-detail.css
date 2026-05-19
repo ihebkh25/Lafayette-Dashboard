@@ -97,6 +97,8 @@
   line-height: 1.9;
   color: #444;
 }
+.detail-desc p { margin-bottom: 16px; }
+.detail-desc p:last-child { margin-bottom: 0; }
 
 /* Use .section-label from base.css — .sidebar-label removed (duplicate) */
 .contact-card {
