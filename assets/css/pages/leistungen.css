@@ -1,80 +1,249 @@
-/* ============ LEISTUNGEN PAGE ============ */
+/* ============ LEISTUNGEN — SPLIT PANEL ============ */
 
-.leist-grid {
+.leist-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: #E0DBD4;
-  border: 1px solid #E0DBD4;
+  grid-template-columns: 38% 62%;
+  min-height: 520px;
+  border: 1px solid var(--color-border);
 }
-.leist-item {
-  background: var(--color-cream);
-  padding: var(--space-lg) 48px;
-  transition: background var(--transition-base);
+
+/* ---- Left nav ---- */
+.leist-nav {
+  background: var(--color-green);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md) 0;
 }
-.leist-item:hover { background: var(--color-white); }
-.leist-num {
-  font-family: var(--font-display);
-  font-weight: 200;
-  font-size: 52px;
-  color: rgba(13, 61, 34, 0.12);
-  line-height: 1;
-  margin-bottom: 20px;
+
+.leist-nav__item {
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding: 28px var(--space-md);
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity var(--transition-base), border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.leist-name {
+
+.leist-nav__item:hover { opacity: 0.75; }
+
+.leist-nav__item.active {
+  opacity: 1;
+  border-left-color: rgba(255, 255, 255, 0.55);
+}
+
+.leist-nav__num {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+.leist-nav__name {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: 26px;
-  color: var(--color-charcoal);
-  margin-bottom: 14px;
+  font-size: 22px;
+  color: var(--color-white);
+  letter-spacing: 0.5px;
+  line-height: 1.15;
 }
-.leist-divider {
-  width: 28px;
+
+/* ---- Right content ---- */
+.leist-content {
+  background: var(--color-white);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+}
+
+.leist-panel {
+  display: none;
+  flex-direction: column;
+  max-width: 560px;
+}
+
+.leist-panel.active {
+  display: flex;
+  animation: leistFadeIn 0.2s ease;
+}
+
+@keyframes leistFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.leist-panel__tagline {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.3;
+  color: var(--color-charcoal);
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.leist-panel__divider {
+  width: 32px;
   height: 1px;
   background: var(--color-green);
   opacity: 0.3;
-  margin-bottom: 18px;
-}
-.leist-desc {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.85;
+  margin-bottom: 24px;
 }
 
+.leist-panel__body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: 32px;
+}
+
+.leist-panel__cta {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(13, 61, 34, 0.3);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: border-color var(--transition-base);
+}
+
+.leist-panel__cta:hover { border-color: var(--color-green); }
+
+/* ---- Process steps ---- */
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
   border: 1px solid var(--color-border);
-  background: var(--color-white);
-  margin-top: var(--space-lg);
+  border-top: none;
+  background: var(--color-cream);
 }
+
 .process-step {
-  padding: 32px 28px;
+  padding: 36px 32px;
   border-right: 1px solid var(--color-border);
 }
+
 .process-step:last-child { border-right: none; }
+
 .process-step-num {
   font-family: var(--font-display);
   font-weight: 200;
-  font-size: 34px;
-  color: rgba(13, 61, 34, 0.2);
-  margin-bottom: 10px;
+  font-size: 44px;
+  color: rgba(13, 61, 34, 0.18);
+  line-height: 1;
+  margin-bottom: 14px;
 }
+
 .process-step-name {
   font-family: var(--font-body);
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-green);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  border-left: 2px solid var(--color-green);
+  padding-left: 8px;
 }
+
 .process-step-desc {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 12px;
   color: var(--color-text-muted);
   line-height: 1.7;
+}
+
+/* ============ RESPONSIVE ============ */
+
+/* Tablet: horizontal scrolling tab bar */
+@media (max-width: 959px) {
+  .leist-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .leist-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    scrollbar-width: none;
+  }
+  .leist-nav::-webkit-scrollbar { display: none; }
+
+  .leist-nav__item {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: 18px 24px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .leist-nav__item.active {
+    border-left-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .leist-nav__name { font-size: 16px; }
+
+  .leist-content {
+    padding: var(--space-md);
+    min-height: 320px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .process-step:nth-child(2) { border-right: none; }
+  .process-step:nth-child(3) { border-top: 1px solid var(--color-border); }
+  .process-step:nth-child(4) { border-top: 1px solid var(--color-border); border-right: none; }
+}
+
+/* Mobile: vertical stacked nav */
+@media (max-width: 479px) {
+  .leist-nav {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .leist-nav__item {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    white-space: normal;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px 20px;
+  }
+
+  .leist-nav__item.active {
+    border-bottom-color: transparent;
+    border-left-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .leist-panel__tagline { font-size: 24px; }
+  .leist-content { padding: var(--space-md) var(--space-sm); }
+
+  .process-steps { grid-template-columns: 1fr; }
+  .process-step {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .process-step:last-child { border-bottom: none; }
+  .process-step:nth-child(3),
+  .process-step:nth-child(4) { border-top: none; }
 }
