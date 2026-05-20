@@ -128,3 +128,77 @@
   line-height: 1.6;
   margin-top: 4px;
 }
+
+/* ============ PRE-FILLED FIELDS ============ */
+.form-input--prefilled {
+  opacity: 0.55;
+  cursor: default;
+  background: var(--color-white);
+}
+.form-input--prefilled:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: var(--color-border);
+}
+
+/* ============ LOGIN PROMPT ============ */
+.k-login-prompt { padding: 40px 0; }
+.k-login-prompt__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 24px;
+  color: var(--color-charcoal);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.k-login-prompt__body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.k-login-prompt__btn {
+  display: inline-block;
+  background: var(--color-green);
+  color: var(--color-white);
+  padding: 13px 28px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition-base);
+}
+.k-login-prompt__btn:hover { background: var(--color-green-dark); }
+
+/* ============ SUCCESS NOTICE ============ */
+.k-success { padding: 40px 0; }
+.k-success__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 28px;
+  color: var(--color-charcoal);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.k-success__body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.k-success__link {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(13, 61, 34, 0.3);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-base);
+}
+.k-success__link:hover { border-color: var(--color-green); }
