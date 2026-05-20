@@ -43,69 +43,91 @@
     <div class="page-hero__subtitle">Kauf · Verkauf · Secret Sales</div>
   </header>
 
-  <!-- ======= SERVICES GRID ======= -->
+  <!-- ======= SPLIT PANEL ======= -->
   <main>
     <section class="section cream">
-      <div class="leist-grid">
 
-        <div class="leist-item">
-          <div class="leist-num">01</div>
-          <h2 class="leist-name">Kauf &amp; Investition</h2>
-          <div class="leist-divider"></div>
-          <p class="leist-desc">Wir verschaffen Ihnen Zugang zu exklusiven, nicht-öffentlichen Immobilien. Basierend auf Ihren Anforderungen identifizieren wir gezielt Objekte aus unserem privaten Netzwerk — diskret, schnell und ohne öffentliche Ausschreibung.</p>
-        </div>
+      <div class="leist-split">
 
-        <div class="leist-item">
-          <div class="leist-num">02</div>
-          <h2 class="leist-name">Verkauf &amp; Vermarktung</h2>
-          <div class="leist-divider"></div>
-          <p class="leist-desc">Ihre Immobilie verdient eine Vermarktung auf höchstem Niveau. Wir entwickeln eine individuelle Strategie, sprechen qualifizierte Interessenten direkt an und begleiten den gesamten Transaktionsprozess.</p>
-        </div>
+        <!-- Left: service nav -->
+        <nav class="leist-nav" aria-label="Leistungen Navigation">
+          <button class="leist-nav__item active" data-target="01">
+            <span class="leist-nav__num">01</span>
+            <span class="leist-nav__name">Kauf &amp; Investition</span>
+          </button>
+          <button class="leist-nav__item" data-target="02">
+            <span class="leist-nav__num">02</span>
+            <span class="leist-nav__name">Verkauf &amp; Vermarktung</span>
+          </button>
+          <button class="leist-nav__item" data-target="03">
+            <span class="leist-nav__num">03</span>
+            <span class="leist-nav__name">Secret Sales</span>
+          </button>
+          <button class="leist-nav__item" data-target="04">
+            <span class="leist-nav__num">04</span>
+            <span class="leist-nav__name">Beratung &amp; Netzwerk</span>
+          </button>
+        </nav>
 
-        <div class="leist-item">
-          <div class="leist-num">03</div>
-          <h2 class="leist-name">Secret Sales</h2>
-          <div class="leist-divider"></div>
-          <p class="leist-desc">Kauf und Verkauf außerhalb des Marktes — ausschließlich für HNWIs, Family Offices, Fonds und CEOs im deutschsprachigen Raum. Keine öffentliche Bekanntmachung. Keine Kompromisse bei Diskretion.</p>
-        </div>
+        <!-- Right: content panels -->
+        <div class="leist-content">
 
-        <div class="leist-item">
-          <div class="leist-num">04</div>
-          <h2 class="leist-name">Beratung &amp; Netzwerk</h2>
-          <div class="leist-divider"></div>
-          <p class="leist-desc">Von der ersten Markteinschätzung bis zur notariellen Beurkundung stehen wir Ihnen als verlässlicher Partner zur Seite. Unser Netzwerk aus Rechtsanwälten, Notaren und Finanzierungspartnern ermöglicht ganzheitliche Begleitung.</p>
+          <div class="leist-panel active" id="leist-01">
+            <div class="leist-panel__tagline">Zugang zu Objekten außerhalb des Marktes.</div>
+            <div class="leist-panel__divider"></div>
+            <p class="leist-panel__body">Wir verschaffen Ihnen Zugang zu exklusiven, nicht-öffentlichen Immobilien. Basierend auf Ihren Anforderungen identifizieren wir gezielt Objekte aus unserem privaten Netzwerk — diskret, schnell und ohne öffentliche Ausschreibung.</p>
+            <a href="kontakt.html" class="leist-panel__cta">Anfrage stellen →</a>
+          </div>
+
+          <div class="leist-panel" id="leist-02">
+            <div class="leist-panel__tagline">Ihre Immobilie. Unser Netzwerk. Kein Kompromiss.</div>
+            <div class="leist-panel__divider"></div>
+            <p class="leist-panel__body">Ihre Immobilie verdient eine Vermarktung auf höchstem Niveau. Wir entwickeln eine individuelle Strategie, sprechen qualifizierte Interessenten direkt an und begleiten den gesamten Transaktionsprozess.</p>
+            <a href="kontakt.html" class="leist-panel__cta">Anfrage stellen →</a>
+          </div>
+
+          <div class="leist-panel" id="leist-03">
+            <div class="leist-panel__tagline">Diskretion ohne Ausnahme.</div>
+            <div class="leist-panel__divider"></div>
+            <p class="leist-panel__body">Kauf und Verkauf außerhalb des Marktes — ausschließlich für HNWIs, Family Offices, Fonds und CEOs im deutschsprachigen Raum. Keine öffentliche Bekanntmachung. Keine Kompromisse bei Diskretion.</p>
+            <a href="kontakt.html" class="leist-panel__cta">Anfrage stellen →</a>
+          </div>
+
+          <div class="leist-panel" id="leist-04">
+            <div class="leist-panel__tagline">Von der ersten Anfrage bis zum Notartermin.</div>
+            <div class="leist-panel__divider"></div>
+            <p class="leist-panel__body">Von der ersten Markteinschätzung bis zur notariellen Beurkundung stehen wir Ihnen als verlässlicher Partner zur Seite. Unser Netzwerk aus Rechtsanwälten, Notaren und Finanzierungspartnern ermöglicht ganzheitliche Begleitung.</p>
+            <a href="kontakt.html" class="leist-panel__cta">Anfrage stellen →</a>
+          </div>
+
         </div>
 
       </div>
 
       <!-- ======= PROCESS BAR ======= -->
       <div class="process-steps">
-
         <div class="process-step">
           <div class="process-step-num">01</div>
           <div class="process-step-name">Erstkontakt</div>
           <p class="process-step-desc">Vertrauliches Gespräch zur Klärung Ihrer Anforderungen und Ziele.</p>
         </div>
-
         <div class="process-step">
           <div class="process-step-num">02</div>
           <div class="process-step-name">Qualifizierung</div>
           <p class="process-step-desc">Aufnahme in unser exklusives Netzwerk und Abstimmung der Suchkriterien.</p>
         </div>
-
         <div class="process-step">
           <div class="process-step-num">03</div>
           <div class="process-step-name">Matching</div>
           <p class="process-step-desc">Gezielte Objektauswahl und diskrete Vorstellung passender Immobilien.</p>
         </div>
-
         <div class="process-step">
           <div class="process-step-num">04</div>
           <div class="process-step-name">Transaktion</div>
           <p class="process-step-desc">Begleitung von Verhandlung, Due Diligence und Notartermin bis zum Abschluss.</p>
         </div>
-
       </div>
+
     </section>
   </main>
 
