@@ -59,6 +59,7 @@
   padding: var(--space-lg);
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .leist-panel {
@@ -176,7 +177,6 @@
   .leist-nav {
     flex-direction: row;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     padding: 0;
     scrollbar-width: none;
   }
@@ -194,7 +194,6 @@
   }
 
   .leist-nav__item.active {
-    border-left-color: transparent;
     border-bottom-color: rgba(255, 255, 255, 0.55);
   }
 
