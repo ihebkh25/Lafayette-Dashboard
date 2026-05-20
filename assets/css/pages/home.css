@@ -350,6 +350,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .stat-item {
+    padding: 20px 14px;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
@@ -392,5 +393,5 @@
   }
   .cta-btns { flex-direction: column; width: 100%; }
   .cta-btn-ghost,
-  .cta-btn-wa { text-align: center; }
+  .cta-btn-wa { text-align: center; white-space: normal; }
 }
