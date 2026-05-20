@@ -2,7 +2,7 @@
 .btn-ghost {
   display: inline-block;
   align-self: flex-start;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   padding: 14px 32px;
   font-family: var(--font-body);
   font-size: 10px;

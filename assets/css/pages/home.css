@@ -15,10 +15,11 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 var(--space-lg) 60px;
+  max-width: 720px;
 }
 .hero-eyebrow {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 4px;
   color: var(--color-text-faint);
   text-transform: uppercase;
@@ -27,7 +28,7 @@
 .hero-headline {
   font-family: var(--font-display);
   font-weight: 200;
-  font-size: clamp(52px, 7vw, 88px);
+  font-size: clamp(64px, 5.5vw, 110px);
   line-height: 1.05;
   letter-spacing: 3px;
   color: var(--color-white);
