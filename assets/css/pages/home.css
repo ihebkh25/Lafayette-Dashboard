@@ -320,3 +320,77 @@
   text-decoration: none;
   white-space: nowrap;
 }
+
+/* ============ RESPONSIVE ============ */
+
+/* Hero — mobile */
+@media (max-width: 479px) {
+  .hero-headline { font-size: clamp(38px, 11vw, 52px); }
+  .hero-body { padding: 0 24px 40px; }
+  .hero .btn-ghost { display: block; text-align: center; }
+  .hero-scroll { display: none; }
+}
+
+/* Hero — small tablet */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero-headline { font-size: clamp(48px, 9vw, 68px); }
+  .hero-body { padding: 0 36px 48px; }
+}
+
+/* Hero — iPad / large tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-headline { font-size: clamp(56px, 7vw, 84px); }
+  .hero-body { padding: 0 44px 56px; }
+}
+
+/* Stats bar — 2×2 on mobile */
+@media (max-width: 639px) {
+  .stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .stat-item:nth-child(2n) { border-right: none; }
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) { border-bottom: none; }
+}
+
+/* Featured properties — single column on mobile */
+@media (max-width: 767px) {
+  .featured { padding: var(--space-md) var(--space-sm); }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .view-all { margin-left: 0; }
+  .prop-grid { grid-template-columns: 1fr; }
+}
+
+/* Philosophy — stacked on mobile */
+@media (max-width: 767px) {
+  .philosophy {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-sm);
+  }
+  .philosophy__person-col { align-items: center; }
+}
+
+/* Services — single column on mobile */
+@media (max-width: 767px) {
+  .services { padding: var(--space-md) var(--space-sm); }
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+/* Contact CTA — stacked on mobile */
+@media (max-width: 639px) {
+  .contact-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: var(--space-md) var(--space-sm);
+  }
+  .cta-btns { flex-direction: column; width: 100%; }
+  .cta-btn-ghost,
+  .cta-btn-wa { text-align: center; }
+}
