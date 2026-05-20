@@ -27,3 +27,14 @@
   text-transform: uppercase;
   margin-top: 14px;
 }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 479px) {
+  .page-hero {
+    padding: calc(68px + 20px) var(--space-sm) 32px;
+  }
+  .page-hero__title {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+}
