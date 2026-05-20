@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mein Dashboard — Lafayette Real Estate</title>
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components/navbar.css">
+  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav id="main-nav" aria-label="Hauptnavigation" class="scrolled">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo__name">Lafayette</div>
+      <div class="nav-logo__sub">Real Estate</div>
+    </a>
+    <div class="nav-links">
+      <a href="objekte.html">Objekte</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="ueber-uns.html">&Uuml;ber uns</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="anmelden.html" class="nav-links__cta">Anmelden</a>
+    </div>
+  </nav>
+
+  <!-- ======= DASHBOARD ======= -->
+  <div class="dash-layout">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <nav class="dash-sidenav">
+        <a href="dashboard-kaeufer.html" class="dash-sidenav__item active">&Uuml;bersicht</a>
+        <a href="#dash-inquiries"        class="dash-sidenav__item">Anfragen</a>
+        <a href="objekte.html"           class="dash-sidenav__item">Objekte</a>
+      </nav>
+      <button class="dash-sidenav__logout" id="dash-logout">Abmelden</button>
+    </aside>
+
+    <!-- Content -->
+    <main class="dash-content">
+
+      <!-- Welcome -->
+      <section class="dash-welcome">
+        <div class="dash-eyebrow">Willkommen zur&uuml;ck</div>
+        <h1 class="dash-headline" id="dash-name"></h1>
+      </section>
+
+      <!-- Stats row -->
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <div class="dash-stat-num" id="dash-count-inquiries">&mdash;</div>
+          <div class="dash-stat-lbl">Anfragen gesendet</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-num">3</div>
+          <div class="dash-stat-lbl">Objekte verf&uuml;gbar</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-num">K&auml;ufer</div>
+          <div class="dash-stat-lbl">Ihr Profil</div>
+        </div>
+      </div>
+
+      <!-- Inquiry history -->
+      <section class="dash-section" id="dash-inquiries">
+        <div class="dash-section-title">Ihre Anfragen</div>
+        <div id="dash-inquiry-list"></div>
+      </section>
+
+      <!-- CTA strip -->
+      <div class="dash-cta">
+        <div class="dash-cta-text">Neue Objekte entdecken.</div>
+        <a href="objekte.html" class="dash-cta-btn">Alle Objekte ansehen</a>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/dashboard-kaeufer.js"></script>
+</body>
+</html>
