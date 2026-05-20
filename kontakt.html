@@ -80,41 +80,39 @@
       </div>
 
       <!-- RIGHT: Contact form -->
-      <div class="kontakt-form">
+      <div class="kontakt-form" id="k-form-wrap">
         <div class="section-label">Anfrage senden</div>
-        <form class="k-form" action="#" method="post">
+        <form class="k-form" id="k-form" action="#" method="post">
 
           <div class="k-form-row">
             <div class="form-group">
-              <label class="form-label" for="vorname">Vorname</label>
-              <input class="form-input" type="text" id="vorname" name="vorname" placeholder="Max" required>
+              <label class="form-label" for="k-vorname">Vorname</label>
+              <input class="form-input" type="text" id="k-vorname" name="vorname" placeholder="Max" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="nachname">Nachname</label>
-              <input class="form-input" type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
+              <label class="form-label" for="k-nachname">Nachname</label>
+              <input class="form-input" type="text" id="k-nachname" name="nachname" placeholder="Mustermann" required>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="email">E-Mail</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+            <label class="form-label" for="k-email">E-Mail</label>
+            <input class="form-input" type="email" id="k-email" name="email" placeholder="max@beispiel.de" required>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="interesse">Ich bin interessiert als</label>
-            <select class="form-select" id="interesse" name="interesse" required>
-              <option value="" disabled selected>Bitte wählen…</option>
-              <option value="kaeufer">Käufer</option>
-              <option value="verkaeufer">Verkäufer</option>
-              <option value="investor">Investor / Family Office</option>
-              <option value="fonds">Fonds / institutioneller Investor</option>
-              <option value="sonstiges">Sonstiges</option>
+            <label class="form-label" for="k-property">Objekt (optional)</label>
+            <select class="form-select" id="k-property" name="property">
+              <option value="">Kein bestimmtes Objekt</option>
+              <option value="Prestige Villa München-Harlaching">Prestige Villa München-Harlaching</option>
+              <option value="Mehrfamilienhaus Oberhaching">Mehrfamilienhaus Oberhaching</option>
+              <option value="Residential Mallorca">Residential Mallorca</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="nachricht">Ihre Nachricht</label>
-            <textarea class="form-textarea" id="nachricht" name="nachricht" rows="5" placeholder="Beschreiben Sie kurz Ihr Anliegen…" required></textarea>
+            <label class="form-label" for="k-nachricht">Ihre Nachricht</label>
+            <textarea class="form-textarea" id="k-nachricht" name="nachricht" rows="5" placeholder="Beschreiben Sie kurz Ihr Anliegen…" required></textarea>
           </div>
 
           <button class="k-submit" type="submit">Anfrage absenden</button>
@@ -158,5 +156,6 @@
 
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/auth.js"></script>
+  <script src="assets/js/contact-gate.js"></script>
 </body>
 </html>
