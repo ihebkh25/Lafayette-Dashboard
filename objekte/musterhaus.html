@@ -87,26 +87,14 @@
         </div>
       </div>
 
-      <!-- Enquiry form -->
-      <form class="enquiry-form" action="#" method="post">
-        <div class="form-group">
-          <label class="form-label" for="name">Ihr Name</label>
-          <input class="form-input" type="text" id="name" name="name" placeholder="Max Mustermann" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">E-Mail</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="ihre@email.de" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="phone">Telefon (optional)</label>
-          <input class="form-input" type="tel" id="phone" name="phone" placeholder="+49 ...">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="message">Ihre Nachricht</label>
-          <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="Ihre Nachricht zu diesem Objekt…" required></textarea>
-        </div>
-        <button type="submit" class="btn-solid enquiry-submit">Anfrage senden</button>
-      </form>
+      <!-- Gated CTA (replaces inline form) -->
+      <a href="../kontakt.html"
+         class="btn-solid"
+         data-gate="contact"
+         data-property="Prestige Villa München-Harlaching"
+         style="display:inline-block;margin-top:28px;text-align:center;width:100%;box-sizing:border-box;">
+        Anfrage stellen
+      </a>
     </div>
   </div>
 
@@ -141,5 +129,6 @@
 
   <script src="../assets/js/nav.js"></script>
   <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/contact-gate.js"></script>
 </body>
 </html>
