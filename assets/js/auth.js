@@ -47,11 +47,13 @@
 
   function requireAuth(returnUrl) {
     if (!isLoggedIn()) {
-      window.location.href = 'anmelden.html?redirect=' + encodeURIComponent(returnUrl);
+      var qs = returnUrl ? '?redirect=' + encodeURIComponent(returnUrl) : '';
+      window.location.href = 'anmelden.html' + qs;
     }
   }
 
   function formatDisplayName(fullName) {
+    if (!fullName || !fullName.trim()) return '';
     var parts = fullName.trim().split(' ');
     if (parts.length === 1) return parts[0];
     return parts[0] + ' ' + parts[parts.length - 1][0] + '.';
@@ -138,15 +140,15 @@
           var err = document.createElement('p');
           err.className = 'form-error';
           err.textContent = result.error;
-          loginForm.querySelector('.form-submit').insertAdjacentElement('afterend', err);
+          var submitBtn = loginForm.querySelector('.form-submit');
+          if (submitBtn) submitBtn.insertAdjacentElement('afterend', err);
           return;
         }
 
         var params   = new URLSearchParams(window.location.search);
-        var redirect = params.get('redirect');
-        window.location.href = redirect
-          ? decodeURIComponent(redirect)
-          : DASHBOARD_URLS[result.user.role];
+        var raw      = params.get('redirect');
+        var safePath = (raw && !/^https?:\/\//i.test(raw) && /^[^/\\]/.test(raw)) ? raw : null;
+        window.location.href = safePath || DASHBOARD_URLS[result.user.role];
       });
     }
 
