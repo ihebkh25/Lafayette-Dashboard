@@ -8,9 +8,11 @@
 
   var SESSION_KEY = 'lre_session';
 
+  var pathPrefix = (/[/\\]objekte[/\\]/i.test(window.location.href)) ? '../' : '';
+
   var DASHBOARD_URLS = {
-    kaeufer:    'dashboard-kaeufer.html',
-    verkaeufer: 'dashboard-verkaeufer.html'
+    kaeufer:    pathPrefix + 'dashboard-kaeufer.html',
+    verkaeufer: pathPrefix + 'dashboard-verkaeufer.html'
   };
 
   function getSession() {
@@ -42,13 +44,13 @@
 
   function logout() {
     localStorage.removeItem(SESSION_KEY);
-    window.location.href = 'index.html';
+    window.location.href = pathPrefix + 'index.html';
   }
 
   function requireAuth(returnUrl) {
     if (!isLoggedIn()) {
       var qs = returnUrl ? '?redirect=' + encodeURIComponent(returnUrl) : '';
-      window.location.href = 'anmelden.html' + qs;
+      window.location.href = pathPrefix + 'anmelden.html' + qs;
     }
   }
 
@@ -63,7 +65,7 @@
     var session = getSession();
     if (!session) return;
 
-    var ctaLink = document.querySelector('a.nav-links__cta[href="anmelden.html"]');
+    var ctaLink = document.querySelector('a.nav-links__cta');
     if (!ctaLink) return;
 
     var dashboardUrl = DASHBOARD_URLS[session.role] || 'index.html';
@@ -72,19 +74,45 @@
     var menu = document.createElement('div');
     menu.className = 'nav-user-menu';
     menu.id = 'nav-user-menu';
-    menu.innerHTML =
-      '<button class="nav-user-btn" aria-haspopup="true" aria-expanded="false">' +
-        '<span class="nav-user-name">' + displayName + '</span>' +
-        '<span class="nav-user-chevron" aria-hidden="true">▾</span>' +
-      '</button>' +
-      '<div class="nav-user-dropdown" role="menu">' +
-        '<a href="' + dashboardUrl + '" class="nav-user-dropdown__item" role="menuitem">Dashboard</a>' +
-        '<button class="nav-user-dropdown__item nav-logout-btn" role="menuitem">Abmelden</button>' +
-      '</div>';
+
+    var btn = document.createElement('button');
+    btn.className = 'nav-user-btn';
+    btn.setAttribute('aria-haspopup', 'menu');
+    btn.setAttribute('aria-expanded', 'false');
+
+    var nameSpan = document.createElement('span');
+    nameSpan.className = 'nav-user-name';
+    nameSpan.textContent = displayName;
+
+    var chevron = document.createElement('span');
+    chevron.className = 'nav-user-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.textContent = '▾';
+
+    btn.appendChild(nameSpan);
+    btn.appendChild(chevron);
+
+    var dropdown = document.createElement('div');
+    dropdown.className = 'nav-user-dropdown';
+    dropdown.setAttribute('role', 'menu');
+
+    var dashLink = document.createElement('a');
+    dashLink.href = dashboardUrl;
+    dashLink.className = 'nav-user-dropdown__item';
+    dashLink.setAttribute('role', 'menuitem');
+    dashLink.textContent = 'Dashboard';
+
+    var logoutBtn = document.createElement('button');
+    logoutBtn.className = 'nav-user-dropdown__item nav-logout-btn';
+    logoutBtn.setAttribute('role', 'menuitem');
+    logoutBtn.textContent = 'Abmelden';
+
+    dropdown.appendChild(dashLink);
+    dropdown.appendChild(logoutBtn);
+    menu.appendChild(btn);
+    menu.appendChild(dropdown);
 
     ctaLink.replaceWith(menu);
-
-    var btn = menu.querySelector('.nav-user-btn');
 
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -147,7 +175,8 @@
 
         var params   = new URLSearchParams(window.location.search);
         var raw      = params.get('redirect');
-        var safePath = (raw && !/^https?:\/\//i.test(raw) && /^[^/\\]/.test(raw)) ? raw : null;
+        var firstSeg = raw ? raw.split('/')[0] : '';
+        var safePath = (raw && firstSeg.indexOf(':') === -1 && firstSeg.indexOf('#') === -1) ? raw : null;
         window.location.href = safePath || DASHBOARD_URLS[result.user.role];
       });
     }
