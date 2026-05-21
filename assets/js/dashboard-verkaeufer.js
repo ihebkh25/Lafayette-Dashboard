@@ -32,6 +32,14 @@
 
   var activeFilter = null;
 
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   function formatDate(iso) {
     try {
       return new Date(iso).toLocaleDateString('de-DE', {
@@ -102,10 +110,10 @@
       var date    = formatDate(r.date);
       var preview = truncate(r.message, 40);
       html +=
-        '<div class="dash-inquiry-row" data-prop-name="' + prop + '">' +
+        '<div class="dash-inquiry-row" data-prop-name="' + esc(prop) + '">' +
           '<div class="dash-inquiry-body">' +
-            '<div class="dash-inquiry-sender">' + sender + '</div>' +
-            '<div class="dash-inquiry-meta">' + prop + ' · ' + date + ' · &ldquo;' + preview + '&rdquo;</div>' +
+            '<div class="dash-inquiry-sender">' + esc(sender) + '</div>' +
+            '<div class="dash-inquiry-meta">' + esc(prop) + ' · ' + esc(date) + ' · &ldquo;' + esc(preview) + '&rdquo;</div>' +
           '</div>' +
           '<div class="dash-inquiry-tag">Neu</div>' +
         '</div>';
@@ -125,7 +133,7 @@
     var bar   = document.getElementById('dash-filter-bar');
     var label = document.getElementById('dash-filter-label');
     if (bar) bar.classList.toggle('hidden', !activeFilter);
-    if (label && activeFilter) label.textContent = 'Gefiltert: ' + activeFilter;
+    if (label) label.textContent = activeFilter ? 'Gefiltert: ' + activeFilter : '';
 
     /* Dim non-matching inquiry rows */
     document.querySelectorAll('#dash-inquiry-list .dash-inquiry-row').forEach(function (row) {
