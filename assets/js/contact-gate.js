@@ -91,6 +91,7 @@
       var nachrEl  = document.getElementById('k-nachricht');
       var record   = {
         date:     new Date().toISOString(),
+        name:     session.name || '',
         property: sel ? sel.value : '',
         message:  nachrEl ? nachrEl.value : '',
         role:     session.role
