@@ -291,3 +291,156 @@
 
   .dash-cta { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
+
+/* ============ VERKÄUFER — PROPERTY CARD GRID ============ */
+
+.dash-prop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.dash-prop-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color var(--transition-base);
+}
+
+.dash-prop-card:hover { border-color: var(--color-green); }
+
+.dash-prop-card.active { border: 2px solid var(--color-green); }
+
+.dash-prop-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.dash-prop-type {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-green);
+  opacity: 0.5;
+}
+
+/* Status badges */
+.dash-prop-status {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 7px;
+}
+
+.dash-prop-status--aktiv {
+  color: var(--color-green);
+  background: rgba(13, 61, 34, 0.08);
+  border: 1px solid rgba(13, 61, 34, 0.2);
+}
+
+.dash-prop-status--verhandlung {
+  color: #7a5c20;
+  background: rgba(138, 109, 59, 0.08);
+  border: 1px solid rgba(138, 109, 59, 0.2);
+}
+
+.dash-prop-status--abgeschlossen {
+  color: #888;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dash-prop-name {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.dash-prop-detail {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.dash-prop-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+
+.dash-prop-stat { text-align: center; }
+
+.dash-prop-stat-num {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: 20px;
+  color: var(--color-green);
+  line-height: 1;
+}
+
+.dash-prop-stat-lbl {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  margin-top: 3px;
+}
+
+/* ============ VERKÄUFER — FILTER BAR ============ */
+
+.dash-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 61, 34, 0.06);
+  border: 1px solid rgba(13, 61, 34, 0.15);
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--color-green);
+  letter-spacing: 1px;
+}
+
+.dash-filter-bar.hidden { display: none; }
+
+.dash-filter-clear {
+  font-family: var(--font-body);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-green);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.65;
+  text-decoration: underline;
+}
+
+/* ============ VERKÄUFER — INQUIRY ROWS ============ */
+
+.dash-inquiry-sender {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.dash-inquiry-row--dimmed { opacity: 0.25; }
+
+/* ============ RESPONSIVE — VERKÄUFER ============ */
+
+@media (max-width: 767px) {
+  .dash-prop-grid { grid-template-columns: 1fr; }
+}
