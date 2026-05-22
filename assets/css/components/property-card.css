@@ -1,4 +1,10 @@
 /* ============ PROPERTY CARD ============ */
+
+/* Ensure anchor wrappers fill the full card block */
+.prop-card-wrap > a {
+  display: block;
+}
+
 .prop-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -73,9 +79,43 @@
 }
 
 /* Featured (home page) card size variants */
-.featured__main { grid-row: 1 / 3; }
-.prop-card-main { height: 100%; }
-.prop-card-main .prop-card__img { height: 420px; }
-.prop-card-main .prop-card__body { padding: 22px 26px 26px; }
+
+/*
+ * Strategy: take image out of normal flow with position:absolute so the
+ * spanning item contributes zero min-content to the grid row sizing algorithm.
+ * Rows are sized purely by the right-side cards, the left card fills via
+ * flex:1, and the image covers the card absolutely. Body pins to bottom.
+ */
+.featured__main {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+.featured__main > a { display: contents; }
+
+.prop-card-main {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image fills the entire card — out of flow, zero grid contribution */
+.prop-card-main .prop-card__img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Body pins to bottom with white background over the image */
+.prop-card-main .prop-card__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 26px 26px;
+  background: var(--color-white);
+}
+
 .prop-card-main .prop-card__location { font-size: 27px; }
 .prop-card-side .prop-card__img { height: 190px; }

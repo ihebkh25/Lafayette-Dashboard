@@ -5,28 +5,52 @@
 
   var PROPERTIES = [
     {
-      name:    'Prestige Villa München-Harlaching',
-      type:    'Residential',
-      detail:  '480m² · 6 Einheiten',
-      status:  'Aktiv',
+      name:     'Prestige Villa München-Harlaching',
+      type:     'Residential',
+      location: 'München-Harlaching',
+      detail:   '480 m² · 6 Einheiten',
+      price:    'Auf Anfrage',
+      status:   'Aktiv',
       modifier: 'aktiv',
-      days:    12
+      days:     12,
+      images: [
+        'assets/images/property_6_1.jpeg',
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'
+      ],
+      href:     'objekte/musterhaus.html'
     },
     {
-      name:    'Mehrfamilienhaus Oberhaching',
-      type:    'Residential',
-      detail:  '8 Einheiten',
-      status:  'In Verhandlung',
+      name:     'Mehrfamilienhaus Oberhaching',
+      type:     'Residential',
+      location: 'Oberhaching, München',
+      detail:   '8 Einheiten · ca. 650 m²',
+      price:    'Auf Anfrage',
+      status:   'In Verhandlung',
       modifier: 'verhandlung',
-      days:    28
+      days:     28,
+      images: [
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80',
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80'
+      ],
+      href:     'objekte.html'
     },
     {
-      name:    'Residential Mallorca',
-      type:    'Ausland',
-      detail:  '320m² · Villa',
-      status:  'Abgeschlossen',
+      name:     'Residential Mallorca',
+      type:     'Ausland',
+      location: 'Mallorca, Spanien',
+      detail:   '320 m² · Villa',
+      price:    'Auf Anfrage',
+      status:   'Abgeschlossen',
       modifier: 'abgeschlossen',
-      days:    45
+      days:     45,
+      images: [
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
+        'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80',
+        'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80'
+      ],
+      href:     'objekte.html'
     }
   ];
 
@@ -63,23 +87,42 @@
         return r.property === prop.name;
       }).length;
 
+      var slides = '';
+      prop.images.forEach(function (src) {
+        slides += '<div class="dash-carousel-slide"><img src="' + src + '" alt="' + esc(prop.name) + '" loading="lazy"></div>';
+      });
+      var dotsHtml = '';
+      prop.images.forEach(function (_, i) {
+        dotsHtml += '<button class="dash-carousel-dot' + (i === 0 ? ' active' : '') + '" aria-label="Bild ' + (i + 1) + '"></button>';
+      });
+
       html +=
         '<div class="dash-prop-card" data-prop-name="' + prop.name + '">' +
-          '<div class="dash-prop-top">' +
-            '<div class="dash-prop-type">' + prop.type + '</div>' +
-            '<span class="dash-prop-status dash-prop-status--' + prop.modifier + '">' + prop.status + '</span>' +
+          '<div class="dash-prop-carousel">' +
+            '<div class="dash-carousel-track">' + slides + '</div>' +
+            '<button class="dash-carousel-btn dash-carousel-prev" aria-label="Vorheriges Bild">&#8249;</button>' +
+            '<button class="dash-carousel-btn dash-carousel-next" aria-label="N&auml;chstes Bild">&#8250;</button>' +
+            '<div class="dash-carousel-dots">' + dotsHtml + '</div>' +
           '</div>' +
-          '<div class="dash-prop-name">' + prop.name + '</div>' +
-          '<div class="dash-prop-detail">' + prop.detail + '</div>' +
-          '<div class="dash-prop-footer">' +
-            '<div class="dash-prop-stat">' +
-              '<div class="dash-prop-stat-num">' + count + '</div>' +
-              '<div class="dash-prop-stat-lbl">Anfragen</div>' +
+          '<div class="dash-prop-body">' +
+            '<div class="dash-prop-top">' +
+              '<div class="dash-prop-type">' + prop.type + '</div>' +
+              '<span class="dash-prop-status dash-prop-status--' + prop.modifier + '">' + prop.status + '</span>' +
             '</div>' +
-            '<div class="dash-prop-stat">' +
-              '<div class="dash-prop-stat-num">' + prop.days + '</div>' +
-              '<div class="dash-prop-stat-lbl">Tage aktiv</div>' +
+            '<div class="dash-prop-name">' + prop.name + '</div>' +
+            '<div class="dash-prop-location">' + esc(prop.location) + '</div>' +
+            '<div class="dash-prop-detail">' + prop.detail + ' · ' + esc(prop.price) + '</div>' +
+            '<div class="dash-prop-footer">' +
+              '<div class="dash-prop-stat">' +
+                '<div class="dash-prop-stat-num">' + count + '</div>' +
+                '<div class="dash-prop-stat-lbl">Anfragen</div>' +
+              '</div>' +
+              '<div class="dash-prop-stat">' +
+                '<div class="dash-prop-stat-num">' + prop.days + '</div>' +
+                '<div class="dash-prop-stat-lbl">Tage aktiv</div>' +
+              '</div>' +
             '</div>' +
+            '<a class="dash-prop-link" href="' + prop.href + '">Zum Objekt &rarr;</a>' +
           '</div>' +
         '</div>';
     });
@@ -89,6 +132,39 @@
       card.addEventListener('click', function () {
         var name = card.getAttribute('data-prop-name');
         applyFilter(activeFilter === name ? null : name);
+      });
+      var link = card.querySelector('.dash-prop-link');
+      if (link) link.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+
+    initCarousels(grid);
+  }
+
+  function initCarousels(grid) {
+    grid.querySelectorAll('.dash-prop-carousel').forEach(function (carousel) {
+      var track   = carousel.querySelector('.dash-carousel-track');
+      var slides  = carousel.querySelectorAll('.dash-carousel-slide');
+      var dots    = carousel.querySelectorAll('.dash-carousel-dot');
+      var total   = slides.length;
+      var current = 0;
+      var slideW  = carousel.offsetWidth;
+
+      slides.forEach(function (slide) { slide.style.width = slideW + 'px'; });
+
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      carousel.querySelector('.dash-carousel-prev').addEventListener('click', function (e) {
+        e.stopPropagation(); goTo(current - 1);
+      });
+      carousel.querySelector('.dash-carousel-next').addEventListener('click', function (e) {
+        e.stopPropagation(); goTo(current + 1);
+      });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function (e) { e.stopPropagation(); goTo(i); });
       });
     });
   }

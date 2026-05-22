@@ -12,20 +12,12 @@
   margin-bottom: 44px;
 }
 
-.footer-brand .logo-name {
-  font-family: var(--font-body);
-  font-size: 14px;
-  letter-spacing: 7px;
-  color: var(--color-white);
-  text-transform: uppercase;
-}
-.footer-brand .logo-sub {
-  font-family: var(--font-body);
-  font-size: 7px;
-  letter-spacing: 4px;
-  color: rgba(255, 255, 255, 0.3);
-  text-transform: uppercase;
+.footer-brand .footer-logo__img {
+  height: 90px;
+  width: auto;
+  display: block;
   margin-bottom: 16px;
+  opacity: 0.85;
 }
 .footer-brand p {
   font-family: var(--font-body);
