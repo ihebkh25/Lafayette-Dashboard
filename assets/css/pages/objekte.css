@@ -47,7 +47,193 @@
   /* wrapper for filter targeting — inherits display from grid context */
 }
 
-/* Property card image height in the object grid */
-.obj-grid .prop-card__img {
+/* ============ PROPERTY CARD CAROUSEL ============ */
+
+/* Prevent grid cell from expanding beyond 1fr to accommodate wide carousel content */
+.obj-grid .prop-card-wrap {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.obj-grid .prop-card__body-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.obj-grid .prop-card:hover .prop-card__img img { transform: none; }
+
+.prop-card__carousel {
+  position: relative;
+  overflow: hidden;
   height: 200px;
+  width: 100%; /* Constrain to card width so overflow:hidden clips the track */
+}
+
+.prop-carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.prop-carousel-slide {
+  flex-shrink: 0;
+  height: 100%;
+  /* Width is set by JS to carousel.offsetWidth — which is now correctly constrained */
+}
+
+.prop-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: none;
+}
+
+.prop-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.prop-carousel-btn:hover { background: rgba(0, 0, 0, 0.58); }
+.prop-carousel-prev { left: 7px; }
+.prop-carousel-next { right: 7px; }
+
+.prop-carousel-expand {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.prop-carousel-expand:hover { background: rgba(0, 0, 0, 0.58); }
+
+.prop-carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+
+.prop-carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+.prop-carousel-dot.active { background: rgba(255, 255, 255, 0.95); }
+
+/* ============ LIGHTBOX ============ */
+
+.prop-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prop-lightbox[hidden] { display: none; }
+
+.prop-lightbox__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.prop-lightbox__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+}
+
+.prop-lightbox__img-wrap {
+  position: relative;
+}
+
+.prop-lightbox__img {
+  display: block;
+  max-width: 80vw;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.prop-lightbox__nav {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.7);
+  width: 42px;
+  height: 42px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+.prop-lightbox__nav:hover { background: rgba(255, 255, 255, 0.15); color: #fff; }
+
+.prop-lightbox__close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.prop-lightbox__close:hover { color: #fff; }
+
+.prop-lightbox__counter {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
 }

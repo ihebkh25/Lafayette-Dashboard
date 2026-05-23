@@ -191,9 +191,7 @@
         notice.className = 'register-demo-notice';
         notice.innerHTML =
           '<p class="register-demo-notice__title">Anfrage übermittelt.</p>' +
-          '<p class="register-demo-notice__body">Für den Demo-Zugang verwenden Sie bitte:<br>' +
-          '<strong>kaeufer@demo.de</strong> oder <strong>verkaeufer@demo.de</strong><br>' +
-          'Passwort: <strong>demo1234</strong></p>';
+          '<p class="register-demo-notice__body">Ihre Registrierung wird von unserem Team geprüft. Sie erhalten eine Benachrichtigung per E-Mail, sobald Ihr Zugang freigeschaltet ist.</p>';
         registerForm.parentNode.insertBefore(notice, registerForm.nextSibling);
       });
     }
