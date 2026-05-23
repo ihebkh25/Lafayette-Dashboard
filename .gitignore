@@ -3,3 +3,12 @@
 .superpowers/
 docs/superpowers/
 konto.md
+
+# Skills tooling
+.agents/
+skills-lock.json
+
+# Node / test tooling (Playwright, etc.)
+node_modules/
+package.json
+package-lock.json
